@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Score Prediction</title>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Student Score Prediction</h2>
+
+        <div class="form-group">
+          <label for="school">School</label>
+          <select id="school">
+            <option value="GP">GP</option>
+            <option value="MS">MS</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="sex">Sex</label>
+          <select id="sex">
+            <option value="F">Female</option>
+            <option value="M">Male</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" placeholder="Enter age">
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <select id="address">
+            <option value="U">Urban</option>
+            <option value="R">Rural</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="famsize">Family Size</label>
+          <select id="famsize">
+            <option value="GT3">Greater than 3</option>
+            <option value="LE3">Less or equal to 3</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="Pstatus">Parental Status</label>
+          <select id="Pstatus">
+            <option value="A">Apart</option>
+            <option value="T">Together</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="Medu">Mother's Education Level</label>
+          <input type="number" id="Medu" placeholder="Enter mother's education level (0-4)">
+        </div>
+
+        <div class="form-group">
+          <label for="Fedu">Father's Education Level</label>
+          <input type="number" id="Fedu" placeholder="Enter father's education level (0-4)">
+        </div>
+
+        <div class="form-group">
+          <label for="Mjob">Mother's Job</label>
+          <select id="Mjob">
+            <option value="teacher">Teacher</option>
+            <option value="health">Health</option>
+            <option value="services">Services</option>
+            <option value="at_home">At Home</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="Fjob">Father's Job</label>
+          <select id="Fjob">
+            <option value="teacher">Teacher</option>
+            <option value="health">Health</option>
+            <option value="services">Services</option>
+            <option value="at_home">At Home</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for Choosing School</label>
+          <select id="reason">
+            <option value="home">Home</option>
+            <option value="reputation">Reputation</option>
+            <option value="course">Course</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="guardian">Guardian</label>
+          <select id="guardian">
+            <option value="mother">Mother</option>
+            <option value="father">Father</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="traveltime">Travel Time to School</label>
+          <input type="number" id="traveltime" placeholder="Enter travel time (1-4)">
+        </div>
+
+        <div class="form-group">
+          <label for="studytime">Study Time per Week</label>
+          <input type="number" id="studytime" placeholder="Enter study time (1-4)">
+        </div>
+
+        <div class="form-group">
+          <label for="failures">Number of Past Failures</label>
+          <input type="number" id="failures" placeholder="Enter number of past failures (0-4)">
+        </div>
+
+        <div class="form-group">
+          <label for="schoolsup">Extra Educational Support</label>
+          <select id="schoolsup">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="famsup">Family Support</label>
+          <select id="famsup">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="paid">Extra Paid Classes</label>
+          <select id="paid">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="activities">Extracurricular Activities</label>
+          <select id="activities">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="nursery">Attended Nursery School</label>
+          <select id="nursery">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="higher">Desire to Attend Higher Education</label>
+          <select id="higher">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="internet">Internet Access at Home</label>
+          <select id="internet">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="romantic">In a Romantic Relationship</label>
+          <select id="romantic">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="famrel">Quality of Family Relationships</label>
+          <input type="number" id="famrel" placeholder="Enter quality of family relationships (1-5)">
+        </div>
+
+        <div class="form-group">
+          <label for="freetime">Free Time After School</label>
+          <input type="number" id="freetime" placeholder="Enter free time (1-5)">
+        </div>
+
+        <div class="form-group">
+          <label for="goout">Going Out with Friends</label>
+          <input type="number" id="goout" placeholder="Enter going out frequency (1-5)">
+        </div>
+
+        <div class="form-group">
+          <label for="Dalc">Workday Alcohol Consumption</label>
+          <input type="number" id="Dalc" placeholder="Enter workday alcohol consumption (1-5)">
+        </div>
+
+        <div class="form-group">
+          <label for="Walc">Weekend Alcohol Consumption</label>
+          <input type="number" id="Walc" placeholder="Enter weekend alcohol consumption (1-5)">
+        </div>
+
+        <div class="form-group">
+          <label for="health">Current Health Status</label>
+          <input type="number" id="health" placeholder="Enter health status (1-5)">
+        </div>
+
+        <div class="form-group">
+          <label for="absences">Number of School Absences</label>
+          <input type="number" id="absences" placeholder="Enter number of absences">
+        </div>
+
+        <div class="form-group">
+          <label for="G1">First Period Grade</label>
+          <input type="number" id="G1" placeholder="Enter first period grade (0-20)">
+        </div>
+
+        <div class="form-group">
+          <label for="G2">Second Period Grade</label>
+          <input type="number" id="G2" placeholder="Enter second period grade (0-20)">
+        </div>
+
+        <button id="predictBtn">Predict Final Grade</button>
+        <div id="result"></div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html

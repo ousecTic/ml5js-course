@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Learning Image Classifier</title>
+    <script src="https://unpkg.com/ml5@0.12.2/dist/ml5.min.js"></script>
+    <style>
+        #imageContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        #imageContainer img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini Teachable Machine</h1>
+    <input type="file" id="fileInput" multiple accept="image/*" />
+    <div id="imageContainer"></div>
+    <p id="message">Upload images</p>
+    <input type="text" id="labelInput" placeholder="Enter label">
+    <button id="addButton" disabled>Add Images</button>
+    <button id="trainButton" disabled>Train Model</button>
+    <button id="predictButton" disabled>Predict</button>
+    <script src="./script.js"></script>
+</body>
+</html>

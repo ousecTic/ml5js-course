@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Student Score Prediction</h2>
+        <div class="form-group">
+          <label for="hoursStudied">Hours Studied Per Week</label>
+          <input type="number" id="hoursStudied" placeholder="Enter hours studied">
+        </div>
+        <div class="form-group">
+          <label for="attendance">Attendance Percentage</label>
+          <input type="number" id="attendance" placeholder="Enter attendance percentage">
+        </div>
+        <div class="form-group">
+          <label for="schoolExamScore">School Exam Score</label>
+          <input type="number" id="schoolExamScore" placeholder="Enter school exam score">
+        </div>
+        <button id="predictBtn">Predict Score</button>
+        <div id="result"></div>
+      </div>
+      <script src="./script.js"></script>
+</body>
+</html>
