@@ -55,7 +55,7 @@ function addImages() {
   uploadedImages.forEach((img) => {
     classifier.addImage(img, label);
   });
-  message.innerHTML = `Added ${uploadedImages.length} image(s) with label: ${label}`;t-rex
+  message.innerHTML = `Added ${uploadedImages.length} image(s) with label: ${label}`;
   trainButton.disabled = false;
 }
 
